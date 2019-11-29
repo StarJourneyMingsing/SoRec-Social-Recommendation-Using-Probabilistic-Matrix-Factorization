@@ -1,0 +1,5 @@
+数据标题：Epinion dataset
+数据网址：http://www.datatang.com/datares/go.aspx?dataid=602020
+
+The dataset contains: 49,290 users who rated a total of 139,738 different items at least once, 
+writing 664,824 reviews. 487,181 issued trust statements.
