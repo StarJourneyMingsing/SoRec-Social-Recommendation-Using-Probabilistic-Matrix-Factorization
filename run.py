@@ -32,7 +32,7 @@ def get_trust_data(filename="epinion_dateset/trust_data.txt",theshape=(49290,492
         factor.data[k] = math.sqrt(indeg[0, j]/(indeg[0,j]+outdeg[i, 0]))
     return csr_matrix(factor)
 
-def get_ratings_data(filename="epinion_dateset/ratings_data.txt",theshape=(49290,139740)):
+def get_ratings_data(filename="epinion_dateset/ratings_data.txt",theshape=(49290,139739)):
     f = open(filename)
     train_data = []
     train_row = []
@@ -63,9 +63,9 @@ def get_ratings_data(filename="epinion_dateset/ratings_data.txt",theshape=(49290
 
 if __name__ == '__main__':
     print("loading data...")
-    trust_data = get_trust_data("trust_data.txt", theshape=(49290, 49290))
+    trust_data = get_trust_data()
     # train set and validae set
-    ratings_data_train, ratings_data_validate = get_ratings_data("ratings_data.txt", theshape=(49290, 139739))
+    ratings_data_train, ratings_data_validate = get_ratings_data()
     print("loading done...")
     print("begin to train...")
     socmodel = Sorec.MF(ratings_data_train, ratings_data_validate, trust_data, lr=0.01, momentum=0.5, latent_size=10,iters=300)
