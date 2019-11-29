@@ -11,7 +11,7 @@ from tqdm import tqdm
 def sigmoid(x):
     return 1.0/(1.0+np.exp(-x))
 
-def get_trust_data(filename="epinion_dateset/trust_data.txt",theshape=(49290,49290)):
+def get_trust_data(filename="epinions_dataset/trust_data.txt",theshape=(49290,49290)):
     f = open(filename)
     lines = f.readlines()
     row = []
@@ -32,7 +32,7 @@ def get_trust_data(filename="epinion_dateset/trust_data.txt",theshape=(49290,492
         factor.data[k] = math.sqrt(indeg[0, j]/(indeg[0,j]+outdeg[i, 0]))
     return csr_matrix(factor)
 
-def get_ratings_data(filename="epinion_dateset/ratings_data.txt",theshape=(49290,139739)):
+def get_ratings_data(filename="epinions_dataset/ratings_data.txt",theshape=(49290,139739)):
     f = open(filename)
     train_data = []
     train_row = []
